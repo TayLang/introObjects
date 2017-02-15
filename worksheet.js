@@ -9,6 +9,21 @@
 // has the value blue, it should change it to red, and 
 // vice-versa.
 
+var gameStuff = {
+	color: 'red'
+}
+var flipColor = function(game) {
+	if (game['color'] === 'blue') {
+        game['color'] = 'red'
+        }
+    else if (game['color'] === 'red') {
+    	game['color'] = 'blue'
+    }
+}
+log(flipColor(gameStuff))
+
+log(gameStuff['color'])
+
 // see test.js for example usage
 
 
@@ -17,6 +32,37 @@
 // Write a function called getFullNames that takes an array 
 // of objects with first and last names and returns an array 
 // of strings, where each string is a customer's full name.
+
+var customers = [
+    {
+    firstName: 'Denis',
+    lastName: 'Italy'
+    },	
+    {
+    firstName: 'Patrick',
+    lastName: 'Bike'
+    },
+    {
+    firstName: 'Anthony',
+    lastName: 'Hat'
+    }
+]
+//log(customers)
+var getFullNames = function(nInput) {
+	var newArray = []
+    var fullName = ""
+	for (var i=0; i<nInput.length; i++) {
+    fullName = nInput[i]['firstName'] + ' ' + nInput[i]['lastName']
+        //log(fullName)
+ 		newArray.push(fullName)
+        
+        
+    }
+    log(newArray)
+}
+
+log(getFullNames(customers))
+
 
 // see test.js for example usage
 
@@ -32,6 +78,22 @@
 // with the letter 'r'.
 
 
+var dog = {
+    name: '',
+    legs: 4,
+    weight: '20 pounds',
+    color: 'brown'
+}
+//log(dog)
+var giveName = function(objInput, newName) {
+    objInput.name = newName
+    log(objInput[name])
+    log(dog)
+}
+
+giveName(dog, 'Bruce')
+
+
 // see test.js for example usage
 
 
@@ -45,6 +107,32 @@
 
 // see test.js for example usage
 
+var stooges = [
+        {
+            name: 'moe',
+            age: 40
+        },
+        {
+            name: 'larry',
+            age: 50
+        },
+        {
+            name: 'curly',
+            age: 60
+        }
+    ]
+//obj['color'] = 'marigold'
+var pluck = function(stoogeName) { 
+    var nameArray = []
+    for (var i =0; i<stoogeName.length; i++) {
+    nameArray.push(stoogeName[i]['name'])
+    
+    }
+    return nameArray
+}        
+
+log(pluck(stooges))
+
 // Part 4
 
 // Write a function called getCounts that takes a string of text as input and returns
@@ -52,6 +140,22 @@
 
 // Note that your counts should NOT be case-sensitive.
 
+var sampleString = 'Is Denis great or is Taylor great but so is Denis'
+
+var getCounts = function(stringInput) {
+    log(stringInput)
+    var upString = stringInput.toUpperCase()
+    log(upString)
+    var sentArray = upString.split(' ')
+    log(sentArray)
+    var strObj = {}
+    for (var i=0; i<sentArray.length; i++) {
+         strObj[] = [sentArray[i]]  
+    }
+    log(strObj)
+}
+
+getCounts(sampleString)
 
 // check test.js for examples of how this function should be used.
 
